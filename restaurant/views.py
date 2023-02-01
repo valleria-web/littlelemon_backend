@@ -1,5 +1,27 @@
-from django.shortcuts import render
+from rest_framework import generics
+from .models import Menu, Booking
+from .serializers import MenuSerializer, BookingSerializer
 
-# Create your views here
-def index(request):
-    return render(request, 'index.html', {})
+class MenuTitle(generics.ListCreateAPIView):
+    queryset = Menu.objects.all()
+    serializer_class = MenuSerializer
+
+class MenuPrice(generics.RetrieveUpdateDestroyAPIView):
+    queryset = Menu.objects.all()
+    serializer_class = MenuSerializer
+
+class MenuInventory(generics.RetrieveUpdateDestroyAPIView):
+    queryset = Menu.objects.all()
+    serializer_class = MenuSerializer
+
+class BookingName(generics.ListCreateAPIView):
+    queryset = Booking.objects.all()
+    serializer_class = BookingSerializer
+
+class BookingNo_of_guests(generics.RetrieveUpdateDestroyAPIView):
+    queryset = Booking.objects.all()
+    serializer_class = BookingSerializer
+
+class BookingBookingDate(generics.RetrieveUpdateDestroyAPIView):
+    queryset = Booking.objects.all()
+    serializer_class = BookingSerializer
