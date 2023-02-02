@@ -1,4 +1,5 @@
 from rest_framework import generics
+from rest_framework import viewsets
 from .models import Menu, Booking
 from .serializers import MenuSerializer, BookingSerializer
 
@@ -27,5 +28,9 @@ class BookingNo_of_guests(generics.RetrieveUpdateDestroyAPIView):
     serializer_class = BookingSerializer
 
 class BookingBookingDate(generics.RetrieveUpdateDestroyAPIView):
+    queryset = Booking.objects.all()
+    serializer_class = BookingSerializer
+
+class BookingViewSet(viewsets.ModelViewSet):
     queryset = Booking.objects.all()
     serializer_class = BookingSerializer
