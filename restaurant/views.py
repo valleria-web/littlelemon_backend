@@ -6,6 +6,10 @@ class MenuTitle(generics.ListCreateAPIView):
     queryset = Menu.objects.all()
     serializer_class = MenuSerializer
 
+class MenuItems(generics.RetrieveUpdateDestroyAPIView):
+    queryset = Menu.objects.all()
+    serializer_class = MenuSerializer
+
 class MenuPrice(generics.RetrieveUpdateDestroyAPIView):
     queryset = Menu.objects.all()
     serializer_class = MenuSerializer
