@@ -1,7 +1,7 @@
 from rest_framework import status
 from rest_framework.test import APITestCase
-from . import Menu
-from . import MenuSerializer
+from .models import Menu
+from .serializers import MenuSerializer
 
 class MenuViewTest(APITestCase):
 
